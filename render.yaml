@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: paperclip
+    runtime: image
+    image:
+      url: ghcr.io/paperclipai/paperclip:latest
+    region: singapore
+    plan: 1c-2g
+    healthCheckPath: /api/health
+    maxShutdownDelaySeconds: 90
+    disk:
+      name: paperclip-data
+      mountPath: /paperclip
+      sizeGB: 5
+    envVars:
+      - key: HOST
+        value: "0.0.0.0"
+      - key: PAPERCLIP_HOME
+        value: "/paperclip"
+      - key: PAPERCLIP_DEPLOYMENT_MODE
+        value: "authenticated"
+      - key: PAPERCLIP_DEPLOYMENT_EXPOSURE
+        value: "public"
+      - key: PAPERCLIP_PUBLIC_URL
+        value: "https://paperclip.onrender.com"
+      - key: DATABASE_URL
+        sync: false
+      - key: BETTER_AUTH_SECRET
+        generateValue: true
+      - key: PAPERCLIP_AGENT_JWT_SECRET
+        generateValue: true
+      - key: PAPERCLIP_TOOL_ACTION_SIGNING_SECRET
+        generateValue: true
+      - key: TRUST_PROXY
+        value: "1"
+      - key: PAPERCLIP_MIGRATION_AUTO_APPLY
+        value: "true"
