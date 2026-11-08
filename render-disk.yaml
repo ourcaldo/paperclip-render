@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: paperclip-disk-test
+    runtime: image
+    image:
+      url: ghcr.io/paperclipai/paperclip:latest
+    region: singapore
+    plan: 1c-2g
+    disk:
+      name: paperclip-data
+      mountPath: /paperclip
+      sizeGB: 5
