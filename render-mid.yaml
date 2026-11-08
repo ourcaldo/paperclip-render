@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: paperclip-mid-test
+    runtime: image
+    image:
+      url: ghcr.io/paperclipai/paperclip:latest
+    region: singapore
+    plan: 1c-2g
+    healthCheckPath: /api/health
+    maxShutdownDelaySeconds: 90
+    disk:
+      name: paperclip-data
+      mountPath: /paperclip
+      sizeGB: 5
