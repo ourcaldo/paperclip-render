@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: paperclip-min-test
-    runtime: image
-    image:
-      url: ghcr.io/paperclipai/paperclip:latest
-    region: singapore
-    plan: 1c-2g
