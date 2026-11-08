@@ -21,7 +21,7 @@ services:
       - key: PAPERCLIP_DEPLOYMENT_EXPOSURE
         value: "public"
       - key: PAPERCLIP_PUBLIC_URL
-        value: "https://paperclip.onrender.com"
+        value: "https://paperclip-raip.onrender.com"
       - key: DATABASE_URL
         sync: false
       - key: BETTER_AUTH_SECRET
