@@ -7,7 +7,6 @@ services:
     region: singapore
     plan: 1c-2g
     healthCheckPath: /api/health
-    dockerCommand: 'sh -c echo [cleanup] symlinks:; find /paperclip/instances/default/companies -type l -print -delete; echo [cleanup] hardlinks:; find /paperclip/instances/default/companies -type f -links +1 -print -delete; echo [cleanup] done; exec node server/dist-runtime/index.mjs'
     disk:
       name: paperclip-data
       mountPath: /paperclip
